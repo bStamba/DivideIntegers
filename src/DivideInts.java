@@ -5,7 +5,6 @@ public class DivideInts {
     //as the answer for the division.
     public int divide(int dividend, int divisor) {
         int total = 0;
-        boolean isNegative = false;
 
         //If both dividend and divisor are negative then we want to subtract the negative divisor
         //which is essentially adding a positive integer to the negative dividend integer.
@@ -27,7 +26,10 @@ public class DivideInts {
             while ((dividend + divisor) >= 0) {
                 dividend = dividend + divisor;
                 total++;
-                if (total == Integer.MAX_VALUE) {
+                if (total == Integer.MAX_VALUE && (dividend + divisor) >= 0){
+                    return Integer.MIN_VALUE;
+                }
+                else if (total == Integer.MAX_VALUE) {
                     System.out.println("Total is: " + -total);
                     return -Integer.MAX_VALUE;
                 }
@@ -42,6 +44,11 @@ public class DivideInts {
             while (dividend + divisor <= 0) {
                 dividend = dividend + divisor;
                 total++;
+                if (total == Integer.MAX_VALUE && (dividend + divisor) <= 0){
+                    System.out.println("Total is: " + Integer.MIN_VALUE);
+                    return Integer.MIN_VALUE;
+                }
+
                 if (total == Integer.MAX_VALUE) {
                     System.out.println("Total is: " + -total);
                     return -Integer.MAX_VALUE;
