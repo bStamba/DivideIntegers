@@ -1,7 +1,7 @@
 public class DivideIntsMain {
 
     public static void main(String[] args){
-        DivideInts di = new DivideInts();
+        DivideInt di = new DivideInt();
 
         di.divide(9,3);
         di.divide(-60,5);

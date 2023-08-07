@@ -1,6 +1,7 @@
 public class DivideInts {
     //We're going to do integer division without using multiplication, division
-    //or modulus. So we're going to subtract the divisor from the dividend until
+    //or modulus while also not being able to store numbers larger than 32 bit. S
+    //So we're going to subtract the divisor from the dividend until
     //the dividend is 0 or less than 0 and then return the total number of times subtracted
     //as the answer for the division.
     public int divide(int dividend, int divisor) {
